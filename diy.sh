@@ -42,3 +42,4 @@ cp -f ../banner package/base-files/files/etc/
 echo '集成diy目录'
 ln -s ../../diy ./package/openwrt-packages
 
+
