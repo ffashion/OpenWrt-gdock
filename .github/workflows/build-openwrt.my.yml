@@ -45,14 +45,14 @@ jobs:
           azure-cli \
           ghc* \
           zulu* \
-          hhvm \
           llvm* \
           firefox \
           google* \
           dotnet* \
           powershell \
           openjdk* \
-          mysql*
+          mysql* \
+          php*
 
         sudo -E apt-get update
         sudo -E apt-get -y install $(curl -fsSL https://is.gd/depend_ubuntu2204_openwrt)
