@@ -27,7 +27,7 @@ jobs:
       uses: actions/checkout@master
 
     - name: Setup Debug Session
-        uses: csexton/debugger-action@master
+      uses: csexton/debugger-action@master
       
     - name: Initialization environment
       env:
