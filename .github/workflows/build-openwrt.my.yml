@@ -30,8 +30,9 @@ jobs:
       env:
         DEBIAN_FRONTEND: noninteractive
       run: |
-        sudo fallocate -l 32G /swapfile
+        sudo fallocate -l 8G /swapfile
         sudo chmod 600 /swapfile
+        sudo mkswap /swapfile 
         sudo swapon /swapfile
 
         docker rmi `docker images -q`
@@ -92,7 +93,7 @@ jobs:
       run: |
         cd openwrt
         echo -e "$(nproc) thread build."
-        make -j1 V=s
+        make -j2 V=s
 
     - name : Upload artifact
       uses: actions/upload-artifact@master
