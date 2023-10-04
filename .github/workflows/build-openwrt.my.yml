@@ -30,6 +30,10 @@ jobs:
       env:
         DEBIAN_FRONTEND: noninteractive
       run: |
+        sudo fallocate -l 32G /swapfile
+        sudo chmod 600 /swapfile
+        sudo swapon /swapfile
+
         docker rmi `docker images -q`
         echo "Deleting files, please wait ..."
         sudo rm -rf \
