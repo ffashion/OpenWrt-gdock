@@ -39,20 +39,21 @@ jobs:
           /usr/share/dotnet \
           /etc/mysql \
           /etc/php
-        # sudo -E apt-get -y purge \
-        #   azure-cli \
-        #   ghc* \
-        #   zulu* \
-        #   hhvm \
-        #   llvm* \
-        #   firefox \
-        #   google* \
-        #   dotnet* \
-        #   powershell \
-        #   openjdk* \
-        #   mysql* \
-        #   php*
+
         
+        sudo -E apt-get -y purge \
+          azure-cli \
+          ghc* \
+          zulu* \
+          hhvm \
+          llvm* \
+          firefox \
+          google* \
+          dotnet* \
+          powershell \
+          openjdk* \
+          mysql*
+
         sudo -E apt-get update
         sudo -E apt-get -y install $(curl -fsSL https://is.gd/depend_ubuntu2204_openwrt)
         sudo -E apt-get clean
