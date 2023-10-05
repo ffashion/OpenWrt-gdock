@@ -20,5 +20,12 @@ jobs:
     - name: Checkout
       uses: actions/checkout@master
     
-    - name: Setup Debug Session
+    - name: run
+      run: go main.go
+
+    - name: debug 
+    if: ${{ failure() }}
       uses: csexton/debugger-action@master
+
+    
+      
