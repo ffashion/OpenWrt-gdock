@@ -18,7 +18,7 @@ index 298989b0d4e8..8ab05b881a76 100644
  	setup_arch(&command_line);
 +
 +	pr_notice("Origin Kernel command line: %s\n", saved_command_line);
-+   pr_notice("modify cmdline for p&w r619ac: %s\n", command_line);
++    pr_notice("modify cmdline for p&w r619ac: %s\n", command_line);
 +	command_line = "ubi.mtd=rootfs root=mtd:ubi_rootfs rootfstype=squashfs rootwait root=/dev/ubiblock0_1 rootfstype=squashfs";
 +	
  	setup_boot_config(command_line);
@@ -26,4 +26,3 @@ index 298989b0d4e8..8ab05b881a76 100644
  	setup_nr_cpu_ids();
 -- 
 2.35.1.677.gabf474a5dd
-
