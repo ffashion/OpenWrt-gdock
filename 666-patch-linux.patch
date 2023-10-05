@@ -1,12 +1,12 @@
 diff --git a/init/main.c b/init/main.c
-index 32b2a8affafd..51107c11d5cb 100644
+index 298989b0d4e8..8ab05b881a76 100644
 --- a/init/main.c
 +++ b/init/main.c
-@@ -868,6 +868,11 @@ asmlinkage __visible void __init __no_sanitize_address start_kernel(void)
+@@ -866,6 +866,11 @@ asmlinkage __visible void __init __no_sanitize_address start_kernel(void)
         pr_notice("%s", linux_banner);
         early_security_init();
         setup_arch(&command_line);
-+       
++
 +       pr_notice("Origin Kernel command line: %s\n", saved_command_line);
 +       pr_notice("modify cmdline for p&w r619ac: %s\n", command_line);
 +       command_line = "ubi.mtd=rootfs root=mtd:ubi_rootfs rootfstype=squashfs rootwait root=/dev/ubiblock0_1 rootfstype=squashfs";
