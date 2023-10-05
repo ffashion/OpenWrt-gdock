@@ -16,7 +16,7 @@ on:
     branches: 
       - master
     paths:
-      - '.config'
+      - 'r619ac.conf'
 
 jobs:
   build:
@@ -74,7 +74,7 @@ jobs:
 
     - name: Load custom configuration
       env:
-        CONFIG_FILE: '.config'
+        CONFIG_FILE: 'r619ac.conf'
       run: |
         [ -e files ] && mv files openwrt/files
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
