@@ -81,7 +81,7 @@ jobs:
         chmod +x diy.sh
         cd openwrt
         ../diy.sh
-        make defconfig
+        make oldconfig
 
     - name: Download package
       run: |
