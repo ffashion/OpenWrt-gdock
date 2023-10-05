@@ -96,8 +96,8 @@ jobs:
         make -j2 V=s
     
     - name: debug
-    if: ${{ failure() }}
-    uses: csexton/debugger-action@master
+      if: ${{ failure() }}
+      uses: csexton/debugger-action@master
   
     - name : Upload artifact
       uses: actions/upload-artifact@master
