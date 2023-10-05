@@ -1,4 +1,4 @@
-From d3086ee95fff52696e401652e5e3d2fae6ab502f Mon Sep 17 00:00:00 2001
+From 0fcbeedf665299e9c1d329c1bebb8f87486b58bf Mon Sep 17 00:00:00 2001
 From: ffashion <helloworldffashion@gmail.com>
 Date: Fri, 6 Oct 2023 01:02:10 +0800
 Subject: [PATCH] fixup platform: because of opboot bootloader'bug we must set
