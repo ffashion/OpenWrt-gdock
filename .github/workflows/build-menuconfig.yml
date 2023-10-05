@@ -10,13 +10,6 @@ name: Build menuconfig
 on:
   repository_dispatch:
   workflow_dispatch:
-  release:
-    types: [published]
-  push:
-    branches: 
-      - master
-    paths:
-      - '.config'
 
 jobs:
   build:
