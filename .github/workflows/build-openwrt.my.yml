@@ -5,7 +5,7 @@
 # Blog: https://p3terx.com
 #=================================================
 
-name: Build my dgdock
+name: Build my gdock
 
 on:
   repository_dispatch:
@@ -13,7 +13,7 @@ on:
   release:
     types: [published]
   push:
-    branches: 
+    branches:
       - master
     paths:
       - 'r619ac.conf'
@@ -25,15 +25,11 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@master
-      
+
     - name: Initialization environment
       env:
         DEBIAN_FRONTEND: noninteractive
       run: |
-        sudo fallocate -l 8G /swapfile
-        sudo chmod 600 /swapfile
-        sudo mkswap /swapfile 
-        sudo swapon /swapfile
 
         docker rmi `docker images -q`
         echo "Deleting files, please wait ..."
@@ -42,7 +38,7 @@ jobs:
           /etc/mysql \
           /etc/php
 
-        
+
         sudo -E apt-get -y purge \
           azure-cli \
           ghc* \
@@ -61,7 +57,7 @@ jobs:
         sudo -E apt-get clean
 
     - name: Clone source code
-      env: 
+      env:
         REPO_URL: https://github.com/coolsnowwolf/lede
         REPO_BRANCH: master
       run: git clone --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
@@ -89,16 +85,20 @@ jobs:
         find dl -size -1024c -exec ls -l {} \;
         find dl -size -1024c -exec rm -f {} \;
 
+    - name: SSH connection to Actions
+      uses: P3TERX/ssh2actions@v1.0.0
+      timeout-minutes: 30
+
     - name: Build
       run: |
         cd openwrt
         echo -e "$(nproc) thread build."
         make -j2 V=s
-    
+
     - name: debug
       if: ${{ failure() }}
       uses: csexton/debugger-action@master
-  
+
     - name : Upload artifact
       uses: actions/upload-artifact@master
       with:
