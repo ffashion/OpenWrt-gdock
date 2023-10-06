@@ -1,9 +1,9 @@
-From d7e01e1ea5e9f12fe820446f0f4b7cc902dee0a9 Mon Sep 17 00:00:00 2001
+From a97a676d2616d955bf43528f709a64ac1dda6f7c Mon Sep 17 00:00:00 2001
 From: ffashion <helloworldffashion@gmail.com>
 Date: Fri, 6 Oct 2023 01:02:10 +0800
-Subject: [PATCH] fixup platform: because of opboot bootloader'bug we must set
- fixed command line for p&w r619ac
+Subject: [PATCH] fixup platform: fix  for p&w r619ac
 
+	fixup platform: because of opboot bootloader'bug we must set fixed command line for p&w r619ac
 ---
  init/main.c | 5 +++++
  1 file changed, 5 insertions(+)
